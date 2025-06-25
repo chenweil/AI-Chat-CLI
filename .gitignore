@@ -1,0 +1,58 @@
+# 编译产物
+ai-chat-cli
+ai-chat-cli.exe
+ai-chat-cli-*
+*.exe
+*.out
+*.bin
+
+# Go 相关
+*.so
+*.dylib
+*.test
+*.prof
+
+# 临时文件
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# 系统文件
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 日志
+*.log
+logs/
+
+# 配置文件（包含敏感信息）
+config.yaml
+config.yml
+*.env
+.env*
+
+# 依赖
+vendor/
+
+# 测试覆盖率
+coverage.out
+*.cover
+
+# 调试
+debug
+debug.exe
+
+# 其他
+*.orig 
