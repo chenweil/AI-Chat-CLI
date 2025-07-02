@@ -12,6 +12,8 @@ import (
 
 	"ai-chat-cli/internal/config"
 
+	"github.com/charmbracelet/glamour"
+	"github.com/logrusorgru/aurora"
 	"github.com/spf13/cobra"
 )
 
@@ -193,8 +195,14 @@ func askQuestionWithHistory(providerCfg config.ProviderConfig, question string, 
 		return fmt.Errorf("API返回空响应")
 	}
 
+	// print response
 	response := chatResp.Choices[0].Message.Content
-	fmt.Println(response)
+	out, err := glamour.Render(response, "dark")
+	if err != nil {
+		fmt.Println(aurora.Red(err))
+		return nil
+	}
+	fmt.Println(out)
 
 	// 添加AI回复到历史
 	*history = append(*history, Message{Role: "assistant", Content: response})
